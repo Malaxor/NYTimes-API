@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New York Times Search</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Bootswatch Styling for Improving the Aesthetics -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+
+	<!-- Font Awesome CSS Icons (For cool glyphicons) -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- Style to fix the issue of text extending past panel length -->
+	<style>
+		.panel-body a 
+		{
+		    word-break:break-all
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<div class="jumbotron" style="background-color: #20315A ; color: white;">
+		<h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i> New York Times API</strong></h1>
+	</div>
+
+	<div class="panel panel-primary">
+
+		<div class="panel-heading">
+			<h3 class="panel-title"><strong><i class="fa fa-list-alt"></i> Search Parameters</strong></h3>
+		</div>
+
+		<div class="panel-body">
+
+			<form role="form">
+
+			  <div class="form-group">
+			    <label for="search">Search Term:</label>
+			    <input type="text" class="form-control" id="searchTerm">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="pwd">Number of Records to Retrieve:</label>
+				<select class="form-control" id="numRecords">
+					<option value=1>1</option>
+					<option value=5 selected>5</option>
+					<option value=10>10</option>
+				</select>			  
+			  </div>
+
+			  <div class="form-group">
+			    <label for="startYear">Start Year (Optional):</label>
+			    <input type="text" class="form-control" id="startYear">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="endYear">End Year (Optional):</label>
+			    <input type="text" class="form-control" id="endYear">
+			  </div>
+
+			<button type="submit" class="btn btn-default" id="runSearch"><i class="fa fa-search"></i> Search</button>
+			<button type="button" class="btn btn-default" id="clearAll"><i class="fa fa-trash"></i> Clear Results</button>
+
+			</form> 
+		</div> <!-- END panel-body END -->
+	</div> <!-- END panel-primary END -->
+
+	
+	<div class="panel panel-primary">
+
+		<div class="panel-heading">
+			<h3 class="panel-title"><strong><i class="fa fa-table"></i>   Top Articles</strong></h3>
+		</div>
+
+		<div class="panel-body" id="wellSection">
+		</div>
+	</div>
+
+	<hr>
+		<h5 class="text-center"><small>backtable2 <i class="fa fa-heart"></i></small></h5>
+		
+</div><!-- END container END -->
+	
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<!-- javascript -->
+<script src="javascript/app.js"></script>
+
+</body>
+</html>
